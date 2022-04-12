@@ -1,0 +1,27 @@
+<h2 class= "text-center">Add Employee Template</h2>
+
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+    {{userForm.value | json}} <br> <br>
+    <div class="formGroup">
+        <label for="firstName">First Name : </label>
+        <input id="firstName" type="text" class="form-control" name="firstName" [(ngModel)]="user.firstName" #firstName="ngModel" required> <br>
+        <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger"> First Name is required        </div>
+    </div>
+    <div class="fromGroup">
+        <label for="lastName">Last Name :</label>
+        <input id="lastName" type="text" class="form-control" name="lastName" [(ngModel)]="user.lastName" #lastName="ngModel" required>
+        <div [hidden]="lastName.valid || lastName.pristine" class="alert alert-danger">Last Name is required</div>
+
+    </div>
+
+
+    <!-- <div>
+      <label for="Email">Email Id:</label>
+    <input id="Email" type="email"> -->
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+
+
+    
+</form>

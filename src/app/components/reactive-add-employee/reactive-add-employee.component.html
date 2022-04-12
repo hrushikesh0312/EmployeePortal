@@ -1,0 +1,27 @@
+<h2 class= "text-center">Add Employee Template</h2>
+
+<form [formGroup]="registrationForm"  (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label>UserName</label>
+        <input type="text"  formControlName="name" class="form-control" >
+        <div class="error"  class="text-danger" *ngIf="registrationForm.controls['name'].hasError('required') && registrationForm.controls['name'].touched">name is required</div>
+    </div>
+          <div class="form-group">
+        <label>password</label>
+        <input type="password"  formControlName="password" class="form-control" >
+        <div class="error"  class="text-danger" *ngIf="registrationForm.controls['password'].hasError('required') && registrationForm.controls['password'].touched">password is required</div>
+    </div>
+    <div class="form-group">
+        <label>confirm password</label>
+        <input type="password"  formControlName="confirmPassword" class="form-control" >
+        <div class="error"  class="text-danger" *ngIf="registrationForm.controls['confirmPassword'].hasError('required') && registrationForm.controls['confirmPassword'].touched   ">Confirm is required</div>
+        <div class="error" class="text-danger" *ngIf="registrationForm.controls['confirmPassword']==registrationForm.controls['password'] && registrationForm.controls['confirmPassword'].touched"></div>
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+
+        </form>
+    
+
+
+
+
